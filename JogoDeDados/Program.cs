@@ -37,7 +37,7 @@ class Program
 
                 if (firstPlayersMove[i] == secondPlayersMove[i])
                 {
-                    Console.WriteLine($"EMPATE! Nenhum jogador pontua na {i} rodada!");
+                    Console.WriteLine($"EMPATE! Nenhum jogador pontua na {i+1}° rodada!");
                 }
                 else
                 {
@@ -59,10 +59,12 @@ class Program
 
             }
             else if (secondPlayerWins > firstPlayerWins)
-            {
-                {
+            {  
                     Console.WriteLine($"\n{secondPlayer} venceu a partida com {secondPlayerWins} pontos!");
-                }
+            }
+            else
+            {
+                Console.WriteLine("\nO jogo empatou!");
             }
         }
     }
