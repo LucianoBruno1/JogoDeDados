@@ -4,14 +4,13 @@ class Program
 {
     static void Main()
     {
-        int rodadas = 3;
+        int rounds = 3;
         int[] firstPlayersMove = new int[3];
         int[] secondPlayersMove = new int[3];
-        int FirstPlayerWins = 0;
-        int SecondPlayerWins = 0;
+        int firstPlayerWins = 0;
+        int secondPlayerWins = 0;
 
         Random rd = new Random();
-        int qtdValores = 6;
 
         Console.WriteLine("Informe o nome do primeiro jogador: ");
         string firstPlayer = Console.ReadLine();
@@ -25,9 +24,9 @@ class Program
         }
         else
         {
-            for (int i = 0; i < rodadas; i++)
+            for (int i = 0; i < rounds; i++)
             {
-                int randomNumber1 = rd.Next(1, 6); // Gere números entre 1 e qtdValores
+                int randomNumber1 = rd.Next(1, 6); 
                 int randomNumber2 = rd.Next(1, 6);
 
                 Console.WriteLine($"\n{firstPlayer} tirou o número: {randomNumber1}");
@@ -45,24 +44,24 @@ class Program
                     if (firstPlayersMove[i] > secondPlayersMove[i])
                     {
                         Console.WriteLine($"{firstPlayer} venceu a {i+1}° rodada!");
-                        FirstPlayerWins++;
+                        firstPlayerWins++;
                     }
                     else
                     {
                         Console.WriteLine($"{secondPlayer} venceu a {i+1}° rodada!");
-                        SecondPlayerWins++;
+                        secondPlayerWins++;
                     }
                 }
             }
-            if (FirstPlayerWins > SecondPlayerWins)
+            if (firstPlayerWins > secondPlayerWins)
             {
-                Console.WriteLine($"\n{firstPlayer} venceu a partida com {FirstPlayerWins} pontos!");
+                Console.WriteLine($"\n{firstPlayer} venceu a partida com {firstPlayerWins} pontos!");
 
             }
-            else if (SecondPlayerWins > FirstPlayerWins)
+            else if (secondPlayerWins > firstPlayerWins)
             {
                 {
-                    Console.WriteLine($"\n{secondPlayer} venceu a partida com {SecondPlayerWins} pontos!");
+                    Console.WriteLine($"\n{secondPlayer} venceu a partida com {secondPlayerWins} pontos!");
                 }
             }
         }
